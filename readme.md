@@ -1,15 +1,41 @@
+<!--
+Creator:
+Last updated by: Brianna
+Market:
+-->
+
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
 # Build Tools
 
-## Learning Objectives
+### Why is this important?
+<!-- framing the "why" in big-picture/real world examples -->
+*This workshop is important because:*
 
-* Define build tools
-* Introduce available build tools
-* Compare and contrast Gulp to Rake
-* Use build tools to automate workflow
+Build Tools are software that allows us to speed up and automate our work, including compiling our code, minification, concatenation, server automatic browser reloading, and other tasks.  They are a commonly-used part of React development workflow.
 
-## Framing (5 min)
+### What are the objectives?
+<!-- specific/measurable goal for students to achieve -->
+*After this workshop, developers will be able to:*
 
-Build Tools are software that allows us to speed up and automate our work, including compiling our code, minification, concatenation, server automatic browser reloading, etc..
+* Explain minification, concatenation, watching a directory.
+* Compare build tools: Rake, Gulp, Webpack.
+* Use build tools to automate workflow.
+
+
+### Where should we be now?
+<!-- call out the skills that are prerequisites -->
+*Before this workshop, developers should already be able to:*
+
+* Write client-side applications with JavaScript and CSS.
+
+## What are Gulp and Webpack?
+
+* These are build tools. Each is commonly used with React to compile JavaScript code and/or manage other assets.
+*  You can think of this like the asset pipeline in Rails.
+
+
+## Review
 
 <details>
 <summary>
@@ -26,7 +52,7 @@ Code in which all unnecessary characters have been removed from source code with
 <summary>
 Q. When have you seen minified code before?</summary>
 
-CDNs for JavaScript tools like jQuery and Angular
+CDNs for JavaScript tools like jQuery and Angular.
 
 <br>
 <br>
@@ -38,7 +64,7 @@ CDNs for JavaScript tools like jQuery and Angular
 Q. What does it mean to compile code? What compiled languages have you heard of, and what languages do they compile to?</summary>
 
 
-Compiling code (sometimes called preprocessing) is taking a file written in one language, like SASS, and running a special "compiler" program to convert it into a new file written in the language we want. For the browser, we can compile SASS into CSS and CoffeeScript into JavaScript. 
+Compiling code (sometimes called preprocessing) is taking a file written in one language, like SASS, and running a special "compiler" program to convert it into a new file written in the language we want. For the browser, we can compile SASS into CSS and CoffeeScript into JavaScript.
 
 <br>
 <br>
@@ -59,21 +85,18 @@ Rails Asset Pipeline, which helped to concatenate all JS and CSS files into one,
 
 In summary, build tools help us complete tasks like compiling and minifying code so we don't have to do those things manually and repeatedly.
 
-We are going to breifly touch on two popular options for build tools: Gulp and Webpack.
+We are going to briefly touch on two popular options for build tools: Gulp and Webpack.
 
-## Gulp (5 min)
+## Gulp
 
-<img src="gulp.jpg" width="50px">
-
-Gulp is an popular open-source automation tool built on Node.js that runs tasks to manipulate files in your application.
-
-It is commonly used for bundling, minificiation, ES6 support, etc..
-
+<img src="gulp.jpg" width="64px">
 [Gulp Documentation](http://gulpjs.com/)
 
-It's really similar to `rake` in Ruby.
+Gulp is an popular open-source automation tool built on Node.js that runs tasks to manipulate files in your application. It is commonly used for bundling, minificiation, ES6 support, and automating similar tasks.
 
-Rake is used to help automate a bunch of tasks for us when building Rails applications. In Rails 5, most of `rake`'s jobs are available through the `rails` command for convenience. 
+Gulp is similar to `rake` in Ruby.
+
+Rake is used to help automate a bunch of tasks for us when building Rails applications. In Rails 5, most of `rake`'s jobs are available through the `rails` command for convenience.
 
 Here are examples of these `rake` tasks:
 
@@ -82,13 +105,13 @@ $ rake db:migrate
 $ rake assets:precompile
 ```
 
-Today, we'll look at ways to accomplish tasks like these when we're not working with Ruby or Rails. 
+Today, we'll look at ways to accomplish tasks like these when we're not working with Ruby or Rails.
 
-## You-Do: Gulp Linter Example (15 min)
+## Gulp Linter Example
 
 Fork and clone this repo: https://github.com/ga-wdi-exercises/gulp-bamsay
 
-[Solution Code](https://github.com/ga-wdi-exercises/gulp-bamsay/tree/jshint-solution)
+- [Solution Code](https://github.com/ga-wdi-exercises/gulp-bamsay/tree/jshint-solution)
 
 ### Gulp Installation
 
@@ -207,7 +230,7 @@ Let's get more practice writing Gulp tasks. Write a task that will `console.log`
 
 [Gulp plugins](http://gulpjs.com/plugins/)
 
-In addition to letting us write our own tasks completely by hand, Gulp has many plugins that we can use in our applications. We will instull these Gulp plugins are installed individually using `npm install <dependency-name> --save-dev`. 
+In addition to letting us write our own tasks completely by hand, Gulp has many plugins that we can use in our applications. We will instull these Gulp plugins are installed individually using `npm install <dependency-name> --save-dev`.
 
 ## You-Do: Jshint Plugin Example (15 min)
 
@@ -240,7 +263,7 @@ gulp.task('jshint', function() {
 Q. What is `gulp.src`?
 </summary>
 <br>
-`gulp.src` specifies file source paths. It can also take an array of source paths. 
+`gulp.src` specifies file source paths. It can also take an array of source paths.
 <br>
 <br>
 </details>
@@ -295,7 +318,7 @@ Q. What is the `jshint` method doign in the snippet above?
 >Note: Instead of calling this task `jshint`, we could have added this as our `default` task. Then, we would simply run `$ gulp` instead.
 
 
-## Gulp SASS 
+## Gulp SASS
 
 ### Gulp-SASS
 
@@ -432,7 +455,7 @@ Finally, add the following at the bottom of `gulpfile.js`:
 gulp.task('default', ['sass', 'connect', 'watch']);
 ```
 
-Run `gulp` in terminal. 
+Run `gulp` in terminal.
 
 <details>
 <summary>
@@ -476,7 +499,7 @@ Task runners like Gulp and Grunt need to rebuild the entire application every ti
 
 ### You-do: Setup
 
-Switch to the `webpack_starter` branch. 
+Switch to the `webpack_starter` branch.
 
 run: `npm install -g webpack`
 run: `npm install webpack --save-dev`
