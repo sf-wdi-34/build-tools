@@ -406,18 +406,15 @@ Q. What is `connect.server({livereload: true})` doing?
 </summary>
 <br>
 
-```
+This lets the web server reload complied files and refresh the browser automatically.
 
-Reloading and Refreshing our browser without us have to do so manually. It's going to start up a web server that will allows us to reload our complied files and refresh our browser automatically.
-
-```
 <br>
 <br>
 </details>
 
 ------
 
-Let's now add `.pipe(connect.reload())` to our `sass` task:
+Now, add `.pipe(connect.reload())` to the `sass` task:
 
 ```
 gulp.task('sass', function () {
@@ -428,33 +425,31 @@ gulp.task('sass', function () {
 });
 
 ```
-Finally, let's add the following at the bottom of our `gulpfile.js`:
+
+Finally, add the following at the bottom of `gulpfile.js`:
 
 ```
 gulp.task('default', ['sass', 'connect', 'watch']);
-
 ```
 
-```bash
-$ gulp
-
-```
+Run `gulp` in terminal. 
 
 <details>
 <summary>
-Q. Why do we not need to specify our task in the above command?
+Q. Why do we not need to specify our task name(s) in the above command?
 </summary>
 <br>
 
-```
-Because we used `default`, gulp will automatically execute the `default` command
-```
+We used `default` as the name of the new task that runs three other tasks.  Gulp will automatically execute the `default` command.
 <br>
 <br>
 </details>
 
+
+You should see output like below:
+
 ```
-[13:25:59] Using gulpfile ~/wdi8/sandbox/bamsay/gulpfile.js
+[13:25:59] Using gulpfile ~/GeneralAssembly/WDI/build-tools/gulp-example/gulpfile.js
 [13:25:59] Starting 'sass'...
 [13:25:59] Starting 'connect'...
 [13:25:59] Finished 'connect' after 18 ms
@@ -467,25 +462,21 @@ Because we used `default`, gulp will automatically execute the `default` command
 [13:25:59] Finished 'default' after 3.63 μs
 
 ```
-## Break (10 min)
+
+Try changing the SASS code, and see what happens!
+
 
 ## Webpack (10 mins)
 
 [Webpack Documentation](https://webpack.github.io/)
 
-webpack is known as a "code bundler". It is used to bundle JavaScript files to run in our browsers, and can be used for transforming, bundling, or packaging assets and resources.
+Webpack is known as a module builder, or a bundler.  It is used to bundle JavaScript files to run in our browsers, and can be used for transforming, bundling, or packaging assets and resources. In essence, it returns a brand new version of your code.  Webpack can alleviate large file sizes somewhat by compiling and bundling the code together.
 
-In essence, it takes your code, transforms and bundles it, then returns a brand new version of your code.
-
-We will be using Webpack with React! You will see that React uses something called JSX, which leads to a fairly large cost in size. Webpack alleviates this somewhat by compiling and bundling the code together.
-
-While Gulp is known as a "task runner", webpack does a little more. Task runners will compile your code as shown in the previous section. Webpack similarly can compile code, but takes things a step further by *bundling* modules and files together. What does that mean exactly?
-
-In short, it allows for faster development.  Task runners like Gulp and Grunt need to rebuild the entire application every time you save.  Bundlers like webpack only rebuild the modules you have specifically edited!
+Task runners like Gulp and Grunt need to rebuild the entire application every time you save.  Bundlers like webpack only rebuild the modules you have specifically edited!
 
 ### You-do: Setup
 
-`git checkout webpack_starter`
+Switch to the `webpack_starter` branch. 
 
 run: `npm install -g webpack`
 run: `npm install webpack --save-dev`
@@ -516,16 +507,13 @@ What does this tell us?
 </summary>
 <br>
 
-```
 We haven't configured what we actually want to do with webpack yet!
-```
+
 <br>
 <br>
 </details>
 
-## STOP (5 mins)
-
-### You Do: Configuring the Webpack (10 mins)
+### Configuring the Webpack (10 mins)
 
 To actually configure our webpack, we need to create a new file in the root of our directory: `webpack.config.js`
 
@@ -546,11 +534,10 @@ What do you think this first part is doing?
 </summary>
 <br>
 
-```
 This simply defines two folders within our app that we will be either reading or modifying with webpack.
 
-*Note* 'path' is a node method
-```
+*Note* 'path' is a node method.
+
 <br>
 <br>
 </details>
@@ -569,10 +556,8 @@ module.exports = {
 What do you think this next section does?
 </summary>
 <br>
-
-```
 Here we are defining the entry point of our webpack. In other words, whatdirectory do we want to look into and bundle?
-```
+
 <br>
 <br>
 </details>
@@ -592,7 +577,7 @@ Lastly, we will need to define the output. Where are we going to put thebundled 
 
 Check out your public folder and see what file was added in!
 
-## STOP (10 mins)
+### Hot Module Replacement
 
 Having to run `webpack` every time you make a change will get frustrating (and boring) quickly. We can set up the `webpack-dev-server` to help us out!
 
@@ -660,9 +645,9 @@ What is this doing??
 </summary>
 <br>
 
-```
+
 Depending on the command we run (start, or build) we will be merging the 'common' object with whatever we include in the empty objects
-```
+
 <br>
 <br>
 </details>
@@ -741,9 +726,8 @@ Try to think about what to do here before looking at the answer!
 </summary>
 <br>
 
-```
 Inside your PATHS object, add `css: path.join(__dirname, 'css')`. Then, within your `common.entry` include `css: PATHS.css`
-```
+
 <br>
 <br>
 </details>
@@ -752,11 +736,7 @@ Go to your `style.css` and change the background to green, what happens?? Notice
 
 ### Bonus: Figure out SASS configuration
 
-## Closing (5 min)
-
-Example of Grunt in the "wild"
-
-## Quiz Questions:
+## Closing Thoughts
 
 1. What type of tasks can build tools help us to automate?
 2. What is Gulp and what environment is it used for?
@@ -764,7 +744,6 @@ Example of Grunt in the "wild"
 4. What is the difference between `gulp.src()` and `gulp.dest()`?
 5. What does the `gulp connect` plugin allows us to do?
 6. How do Gulp and Webpack differ?
-7. Why does webpack work well with React?
 
 ### Additional Resources
 
