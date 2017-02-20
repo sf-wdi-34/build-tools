@@ -644,12 +644,12 @@ One of the best features of the dev server is [Hot Module Replacement](https://w
 
 ### Additional Resources
 
-[Webpack as middleware](https://webpack.github.io/docs/webpack-dev-middleware.html)
+* [Webpack as middleware](https://webpack.github.io/docs/webpack-dev-middleware.html)  
+* [Webpack tutorials](http://survivejs.com/webpack_react/developing_with_webpack/)  
+* [Webpack with node](http://jlongster.com/Backend-Apps-with-Webpack--Part-I)  
+* [Webpack compared](http://survivejs.com/webpack/webpack-compared/)  
+* [Gulp with Webpack](https://webpack.github.io/docs/usage-with-gulp.html)  
+* [Gulp Tutorial](https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js)  
+* [Grunt Tutorial](http://www.brianchu.com/blog/2013/07/11/grunt-by-example-a-tutorial-for-javascripts-task-runner/)
 
-[Webpack compared](http://survivejs.com/webpack/webpack-compared/)
 
-[Webpack tutorials](http://survivejs.com/webpack_react/developing_with_webpack/)
-
-[Gulp Tutorial](https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js)
-
-[Grunt Tutorial](http://www.brianchu.com/blog/2013/07/11/grunt-by-example-a-tutorial-for-javascripts-task-runner/)
