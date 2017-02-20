@@ -89,8 +89,8 @@ We are going to briefly touch on two popular options for build tools: Gulp and W
 
 ## Gulp
 
-<img src="gulp.jpg" width="54px">[Gulp Documentation](http://gulpjs.com/)
-<img src="gulp.jpg" width="54px">
+<img src="gulp.jpg" width="36px">[Gulp Documentation](http://gulpjs.com/)
+<img src="gulp.jpg" width="36px">
 
 Gulp is an popular open-source automation tool built on Node.js that runs tasks to manipulate files in your application.
 
@@ -438,11 +438,13 @@ The two new dependencies are [Gulp Watch](https://www.npmjs.com/package/gulp-wat
 
 ## Webpack
 
-[Webpack Documentation](https://webpack.github.io/)
+<img src="https://tse3.mm.bing.net/th?id=OIP.5YOlpCnTx-mDIgmWmDnu0AEsEs&pid=15.1&P=0" width="48px"> [Webpack Documentation](http://webpack.github.io/docs/) <img src="https://tse3.mm.bing.net/th?id=OIP.5YOlpCnTx-mDIgmWmDnu0AEsEs&pid=15.1&P=0" width="48px"> 
 
 Webpack is known as a "module builder," or a bundler.  It is used to bundle JavaScript files to run in our browsers, and can be used for transforming, bundling, or packaging assets and resources. In essence, it returns a brand new version of your code.  Webpack can alleviate large file sizes somewhat by compiling and bundling the code together.
 
 Task runners like Gulp need to rebuild the entire application every time you save. Webpack only rebuilds the modules you have specifically edited!
+
+Before we get started, skim and discuss the [Webpack 2 concepts page](https://webpack.js.org/concepts/).  Even though this is a newer version of Webpack, the concepts remain mostly the same.
 
 ### Install Webpack
 
